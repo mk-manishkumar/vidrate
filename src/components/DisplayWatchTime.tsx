@@ -1,8 +1,13 @@
-import React, { useMemo } from "react";
+"use client";
+
+import { useMemo } from "react";
 
 // Converts ISO 8601 duration (e.g., PT36M54S) to seconds
-const parseISODurationToSeconds = (isoDuration) => {
-  const match = isoDuration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+const parseISODurationToSeconds = (isoDuration: string) => {
+  const match = isoDuration.match(
+    /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/
+  );
+
   if (!match) return 0;
 
   const hours = parseInt(match[1] || "0", 10);
@@ -13,7 +18,7 @@ const parseISODurationToSeconds = (isoDuration) => {
 };
 
 // Format seconds into "Hh Mm Ss"
-const timeFormat = (seconds) => {
+const timeFormat = (seconds: number) => {
   if (!seconds || isNaN(seconds)) return "Invalid time";
 
   const h = Math.floor(seconds / 3600);
@@ -23,17 +28,19 @@ const timeFormat = (seconds) => {
   return `${h > 0 ? h + "h " : ""}${m}m ${s}s`;
 };
 
-const DisplayWatchTime = ({ duration, isDarkMode }) => {
+type DisplayWatchTimeProps = {
+  duration: string;
+  isDarkMode: boolean;
+};
+
+export default function DisplayWatchTime({ duration, isDarkMode }: DisplayWatchTimeProps) {
   const speedTimes = useMemo(() => {
     const totalSeconds = parseISODurationToSeconds(duration);
     if (!totalSeconds) return [];
 
     const speeds = [0.25, 0.5, 0.75, 1.25, 1.5, 1.75, 2, 3];
 
-    return speeds.map((speed) => ({
-      speed,
-      time: timeFormat(totalSeconds / speed),
-    }));
+    return speeds.map((speed) => ({ speed, time: timeFormat(totalSeconds / speed) }));
   }, [duration]);
 
   if (!duration) return null;
@@ -48,6 +55,4 @@ const DisplayWatchTime = ({ duration, isDarkMode }) => {
       ))}
     </div>
   );
-};
-
-export default DisplayWatchTime;
+}

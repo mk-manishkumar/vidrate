@@ -1,166 +1,36 @@
-# **Watchwise**
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-**WatchWise** is a YouTube video duration analyzer that allows users to paste a YouTube video link and view its duration at various playback speeds. It efficiently fetches video metadata and displays formatted durations in a user-friendly interface.
+## Getting Started
 
+First, run the development server:
 
----
-
-## **Deployment**
-
-This project is deployed on and `Vercel` . [Click here](https://watchwise-yt.vercel.app) for live project.
-
-## **Technologies Used**
-
-### **Frontend**
-- **React**
-- **Tailwind CSS**
-
-### **Backend**
-- **Node.js + Express**
-- **YouTube Data API**
-
----
-
-## **Project Structure**
-```plaintext
-watchwise/
-├── api/                          # Backend folder
-│   ├── .env                      # Backend environment variables
-│   ├── .env.sample               # Sample backend env file
-│   ├── .gitignore                # Git ignored files for backend
-│   ├── package.json              # Backend dependencies and scripts
-│   ├── package-lock.json         # Backend lockfile
-│   ├── server.js                 # Express backend entry point
-│   └── vercel.json               # Vercel backend config
-│
-├── ui/                           # Frontend folder
-│   ├── src/                      # React source files
-│   │   ├── assets/               # Static assets (images, etc.)
-│   │   ├── components/           # React components
-│   │   ├── App.jsx               # Main App component
-│   │   ├── App.css               # App-specific styles
-│   │   ├── index.css             # Global styles
-│   │   └── main.jsx              # Entry point for React
-│   ├── .env                      # Frontend environment variables
-│   ├── .env.sample               # Sample frontend env file
-│   ├── .gitignore                # Git ignored files for frontend
-│   ├── eslint.config.js          # ESLint configuration
-│   ├── index.html                # HTML template
-│   ├── package.json              # Frontend dependencies and scripts
-│   ├── package-lock.json         # Frontend lockfile
-│   └── vite.config.js            # Vite configuration
-
-```
-
----
-
-## **Getting Started**
-
-### **1. Prerequisites**
-Ensure the following software is installed on your machine:
-- **Node.js** (v16+ recommended)
-- **npm** (or **yarn**)
-
-### **2. Installation**
-Clone the repository:
-```bash
-git clone https://github.com/your-username/watchwise.git
-cd watchwise
-```
-
-Install dependencies:
-```bash
-# Backend dependencies
-npm install
-
-# Frontend dependencies
-cd client
-npm install
-```
-
----
-
-## **Environment Variables**
-Create `.env` files for both the backend and frontend based on the provided `.env.sample`.  
-
-### Backend `.env` example:
-```env
-PORT=5000 (example)
-YOUTUBE_API_KEY=""
-ALLOWED_ORIGIN=""
-```
-
-### Frontend `.env` example (`client/.env`):
-```env
-VITE_API_BASE_URL=""
-```
-
----
-
-## **Running the Application**
-
-### **1. Backend**
-Start the backend server:
 ```bash
 npm run dev
-```
-The backend will run on `http://localhost:5000`.
-
-### **2. Frontend**
-Start the frontend development server:
-```bash
-cd client
-npm run dev
-```
-The frontend will run on `http://localhost:5173`.
-
----
-
-## **API Endpoints**
-| **Method** | **Endpoint**              | **Description**             |
-| ---------- | ------------------------- | --------------------------- |
-| `GET`      | `/api/video-details?url=` | Fetch YouTube video details |
-
-**Example:**
-```bash
-GET http://localhost:5000/api/video-details?url=https://www.youtube.com/watch?v=exampleID
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## **Error Handling**
-- **Invalid URL**: Ensures that only valid YouTube URLs are processed.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## **Contributing**
-Contributions are welcome! Follow these steps:
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Added feature-name"
-   ```
-4. Push your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a pull request.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
----
+## Deploy on Vercel
 
-## **License**
-This project is licensed under the **MIT License**. See `LICENSE` for more details.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
----
-
-## **Contact**
-
-If you have any queries mail me at `manish.login01@gmail.com` or ping me on [Twitter/X](https://x.com/_manishmk).
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

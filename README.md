@@ -53,8 +53,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/watchwise.git
-cd watchwise
+git clone https://github.com/yourusername/vidrate.git
+cd vidrate
 ```
 
 ### 2. Install Dependencies
@@ -107,7 +107,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the a
 ## 📁 Project Structure
 
 ```
-watchwise/
+vidrate/
 ├── src/
 │   ├── app/
 │   │   ├── api/
@@ -217,8 +217,6 @@ Fetches YouTube video details.
 ### Deploy on Vercel
 
 The easiest way to deploy Vidrate is using [Vercel](https://vercel.com):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/watchwise)
 
 1. Push your code to GitHub
 2. Import your repository to Vercel
